@@ -34,7 +34,7 @@ public class PropertiesUtil {
     public String getPro(String pname,String pvalue) throws FileNotFoundException {
         String path = PropertiesUtil.class.getResource("/prop/"+pname+".properties").getPath();
         File file = new File(path);
-        long lastModified = file.lastModified();
+       // long lastModified = file.lastModified();
 //        //检查缓存中是否存在
 //        if(propertiesHashMap.containsKey(pname)){
 //            //检查是否修改过
@@ -48,12 +48,13 @@ public class PropertiesUtil {
         FileInputStream resourceAsStream = new FileInputStream(file);
         try {
             pro.load(resourceAsStream);
+            pro.clone();
         } catch (IOException e) {
             e.printStackTrace();
         }
         //缓存
-        propertiesHashMap.put(pname,pro);
-        propertiesTimeHashMap.put(pname,lastModified);
+        //propertiesHashMap.put(pname,pro);
+        //propertiesTimeHashMap.put(pname,lastModified);
         return pro.getProperty(pvalue);
     }
 

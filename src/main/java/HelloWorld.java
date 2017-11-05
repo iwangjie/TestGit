@@ -9,7 +9,7 @@ public class HelloWorld {
     public static void main(String[] args) throws FileNotFoundException {
 //        String s = Arrays.toString(new int[]{1, 2, 3});
 //        System.out.println(s);
-//
+//test
 //        System.out.println("Six Six Six!My first open source github app!");
 
        // String test = PropertiesUtil.getPro("", "test");
